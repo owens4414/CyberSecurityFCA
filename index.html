@@ -403,7 +403,13 @@
                         id: "cmmc1-req", 
                         title: "CMMC Level 1 (Foundational)", 
                         badge: "required", 
-                        requirements: ["Corresponds to FAR 52.204-21", "15 Security Requirements", "Annual Self-Assessment", "Score uploaded to SPRS", "Senior Official Affirmation"] 
+                        requirements: [
+                            "Corresponds to FAR 52.204-21", 
+                            "15 Security Requirements", 
+                            "Annual Self-Assessment", 
+                            "Score uploaded to SPRS", 
+                            "Senior Official Affirmation"
+                        ] 
                     }
                 ],
                 cmmc2: [
@@ -411,13 +417,24 @@
                         id: "cmmc2-req", 
                         title: "CMMC Level 2 (Advanced)", 
                         badge: "required", 
-                        requirements: ["110 Security Practices (Matches NIST SP 800-171)", "Triennial Third-Party Assessment (C3PAO) for CUI", "System Security Plan (SSP) Required", "POA&M Allowed for certain non-critical controls"] 
+                        requirements: [
+                            "INCLUDES ALL LEVEL 1 REQUIREMENTS", // <--- Added this line
+                            "110 Security Practices (Matches NIST SP 800-171)", 
+                            "Triennial Third-Party Assessment (C3PAO) for CUI", 
+                            "System Security Plan (SSP) Required", 
+                            "POA&M Allowed for certain non-critical controls"
+                        ] 
                     },
                     {
                         id: "dfars-7012",
                         title: "DFARS 252.204-7012",
                         badge: "required",
-                        requirements: ["72-Hour Incident Reporting to DIBNet", "Malicious Code Submission", "Forensic Data Preservation", "Flow-down to subcontractors"]
+                        requirements: [
+                            "72-Hour Incident Reporting to DIBNet", 
+                            "Malicious Code Submission", 
+                            "Forensic Data Preservation", 
+                            "Flow-down to subcontractors"
+                        ]
                     }
                 ],
                 cmmc3: [
@@ -425,7 +442,12 @@
                         id: "cmmc3-req", 
                         title: "CMMC Level 3 (Expert)", 
                         badge: "required", 
-                        requirements: ["Includes all Level 2 requirements", "Additional Subset of NIST SP 800-172 controls", "Government-Led Assessment (DIBCAC)", "Focus on Advanced Persistent Threats (APT)"] 
+                        requirements: [
+                            "Includes all Level 2 requirements", 
+                            "Additional Subset of NIST SP 800-172 controls", 
+                            "Government-Led Assessment (DIBCAC)", 
+                            "Focus on Advanced Persistent Threats (APT)"
+                        ] 
                     }
                 ]
             }
