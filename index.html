@@ -243,7 +243,7 @@
     // --- STATE MANAGEMENT ---
     let currentCategory = null;
 
-    // --- DATA STORE (UPDATED FOR CUMULATIVE LOGIC) ---
+    // --- DATA STORE ---
     const complianceData = {
         general: {
             title: "General Federal Contractor",
@@ -386,7 +386,7 @@
                         badge: "required", 
                         requirements: [
                             "DoD PA (Provisional Authorization) Required", 
-                            "Equivalent to FedRAMP Moderate (mostly)", 
+                            "<strong>NIST SP 800-53 Moderate Baseline</strong> (FedRAMP Equivalent)", 
                             "Data must be stored in US or approved territories"
                         ] 
                     },
@@ -399,7 +399,8 @@
                         badge: "required", 
                         requirements: [
                             "<span class='cumulative-bold'>CUMULATIVE: INCLUDES ALL IL2 BASELINES</span>",
-                            "Equivalent to FedRAMP Moderate + DoD Specific 'FedRAMP+' Controls", 
+                            "<strong>NIST SP 800-53 Moderate Baseline</strong> (FedRAMP Equivalent)", 
+                            "PLUS DoD-Specific 'FedRAMP+' Controls (Parameters/Enhancements)", 
                             "Must be accessible via NIPRNet (or equivalent assurance)", 
                             "Stronger Incident Response integration with DoD"
                         ] 
@@ -413,7 +414,8 @@
                         badge: "required", 
                         requirements: [
                             "<span class='cumulative-bold'>CUMULATIVE: INCLUDES ALL IL4 BASELINES</span>",
-                            "Escalates to <strong>FedRAMP High</strong> Baseline + DoD Specifics", 
+                            "Escalates to <strong>NIST SP 800-53 High Baseline</strong> (FedRAMP High)", 
+                            "PLUS DoD-Specific 'FedRAMP+' Controls (Parameters/Enhancements)", 
                             "<strong>Physical Separation:</strong> Dedicated Infrastructure required", 
                             "Connection via Cloud Access Point (CAP)", 
                             "US Citizens Only for Ops/Admin"
@@ -428,7 +430,8 @@
                         badge: "required", 
                         requirements: [
                             "<span class='cumulative-bold'>CUMULATIVE: INCLUDES IL5 SECURITY RIGOR</span>",
-                            "<strong>Classified Environment:</strong> Processing up to SECRET", 
+                            "<strong>NIST SP 800-53 High Baseline</strong> selected via CNSSI 1253", 
+                            "PLUS Classified Overlay for SECRET data",
                             "Connectivity: SIPRNet Only", 
                             "Physical Security: Strict Isolation (SCIF) per ICD 705", 
                             "Personnel: Secret Clearance Required"
