@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f3f4f6; /* Light gray background */
+            background: #f3f4f6;
             min-height: 100vh;
             padding: 20px;
             color: #333;
@@ -33,34 +33,20 @@
 
         /* --- Header Section --- */
         .header {
-            /* Updated color per request */
             background: #204079; 
             color: white;
             padding: 40px;
             text-align: center;
-            position: relative;
         }
 
-        .header h1 {
-            font-size: 2.2em;
-            margin-bottom: 10px;
-        }
-
-        .header p {
-            font-size: 1.1em;
-            opacity: 0.9;
-        }
+        .header h1 { font-size: 2.2em; margin-bottom: 10px; }
+        .header p { font-size: 1.1em; opacity: 0.9; }
 
         /* --- Main Content Area --- */
-        .content {
-            padding: 40px;
-            flex: 1;
-        }
+        .content { padding: 40px; flex: 1; }
 
         /* --- Selection Panels --- */
-        .selection-panel {
-            animation: fadeIn 0.5s ease-out;
-        }
+        .selection-panel { animation: fadeIn 0.5s ease-out; }
 
         .selection-title {
             text-align: center;
@@ -72,7 +58,6 @@
 
         .button-grid {
             display: grid;
-            /* Changed minmax to 300px to force a 3-column layout on desktop (3 items top, 2 items bottom) */
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
             margin-bottom: 30px;
@@ -99,65 +84,31 @@
             border-color: #3b82f6;
         }
 
-        .category-button .icon {
-            font-size: 3em;
-            margin-bottom: 15px;
-        }
-
-        .category-button .title {
-            font-size: 1.1em;
-            font-weight: 700;
-            color: #1e293b;
-            margin-bottom: 8px;
-        }
-
-        .category-button .desc {
-            font-size: 0.85em;
-            color: #64748b;
-            line-height: 1.4;
-        }
+        .category-button .icon { font-size: 3em; margin-bottom: 15px; }
+        .category-button .title { font-size: 1.1em; font-weight: 700; color: #1e293b; margin-bottom: 8px; }
+        .category-button .desc { font-size: 0.85em; color: #64748b; line-height: 1.4; }
 
         /* --- Colors for Categories --- */
         .cat-general .icon { color: #3b82f6; }
-        .cat-cloud .icon { color: #8b5cf6; } /* Federal Civil Cloud */
-        .cat-dod-gen .icon { color: #ef4444; } /* DoD General */
-        .cat-dod-cloud .icon { color: #f59e0b; } /* DoD Cloud */
+        .cat-cloud .icon { color: #8b5cf6; } 
+        .cat-dod-gen .icon { color: #ef4444; } 
+        .cat-dod-cloud .icon { color: #f59e0b; } 
         .cat-healthcare .icon { color: #10b981; }
 
-        /* --- Impact Level Buttons --- */
-        .impact-level-panel {
-            display: none;
-        }
+        /* --- Impact Level Panels --- */
+        .impact-level-panel, .results-panel { display: none; }
+        .results-panel { animation: slideUp 0.5s ease-out; }
 
-        /* --- Results Panel --- */
-        .results-panel {
-            display: none;
-            animation: slideUp 0.5s ease-out;
-        }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .nav-bar {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
+        /* --- Nav & Buttons --- */
+        .nav-bar { margin-bottom: 20px; }
         .back-btn {
-            background: #f1f5f9;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
-            color: #475569;
-            transition: background 0.2s;
+            background: #f1f5f9; border: none; padding: 10px 20px;
+            border-radius: 6px; cursor: pointer; font-weight: 600;
+            color: #475569; transition: background 0.2s;
         }
-
         .back-btn:hover { background: #e2e8f0; }
 
         /* --- Standard Cards --- */
@@ -171,100 +122,49 @@
         }
 
         .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
-            border-bottom: 1px solid #f1f5f9;
-            padding-bottom: 15px;
+            display: flex; justify-content: space-between; align-items: flex-start;
+            margin-bottom: 15px; border-bottom: 1px solid #f1f5f9; padding-bottom: 15px;
         }
-
-        .card-title {
-            font-size: 1.3em;
-            color: #1e293b;
-            font-weight: 700;
-        }
-
-        .card-badges {
-            display: flex;
-            gap: 8px;
-        }
-
-        .badge {
-            font-size: 0.75em;
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
+        .card-title { font-size: 1.3em; color: #1e293b; font-weight: 700; }
+        
+        .card-badges { display: flex; gap: 8px; }
+        .badge { font-size: 0.75em; padding: 4px 10px; border-radius: 12px; font-weight: 700; text-transform: uppercase; }
         .badge-required { background: #fee2e2; color: #991b1b; }
         .badge-applicable { background: #fef3c7; color: #92400e; }
         .badge-note { background: #e0f2fe; color: #0369a1; }
 
         /* --- List Styles --- */
-        .requirements-list {
-            list-style: none;
-        }
-
+        .requirements-list { list-style: none; }
         .requirement-item {
-            display: flex;
-            align-items: flex-start;
-            padding: 10px 0;
+            display: flex; align-items: flex-start; padding: 10px 0;
             border-bottom: 1px solid #f8fafc;
         }
-
         .requirement-item:last-child { border-bottom: none; }
+        
+        .requirement-icon { margin-right: 15px; font-size: 1.1em; flex-shrink: 0; color: #10b981; margin-top: 3px; }
+        .requirement-text { color: #334155; line-height: 1.5; flex: 1; }
 
-        .requirement-icon {
-            margin-right: 15px;
-            font-size: 1.1em;
-            flex-shrink: 0;
-            color: #10b981; 
-            margin-top: 3px; 
-        }
+        /* Style for the "Cumulative" text */
+        .cumulative-bold { font-weight: 700; color: #0f172a; }
 
-        .requirement-text {
-            color: #334155;
-            line-height: 1.5;
-            flex: 1;
-            margin-top: 0; 
-        }
-
-        /* --- Warning Box --- */
+        /* --- Info Boxes --- */
         .warning-box {
-            background: #fff1f2;
-            border-left: 4px solid #f43f5e;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 30px;
+            background: #fff1f2; border-left: 4px solid #f43f5e;
+            padding: 20px; border-radius: 8px; margin-top: 30px;
         }
         .warning-box h4 { color: #9f1239; margin-bottom: 8px; }
-        .warning-box p { color: #881337; font-size: 0.95em; }
-
-        /* --- Info Box (Blue) --- */
         .info-box {
-            background: #eff6ff;
-            border-left: 4px solid #3b82f6;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 30px;
+            background: #eff6ff; border-left: 4px solid #3b82f6;
+            padding: 20px; border-radius: 8px; margin-top: 30px;
         }
-        .info-box h4 { color: #1e40af; margin-bottom: 8px; }
-        .info-box p { color: #1e3a8a; font-size: 0.95em; }
 
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-        /* --- Mobile Optimization --- */
+        /* --- Mobile --- */
         @media (max-width: 768px) {
             body { padding: 10px; }
             .header { padding: 30px 20px; }
             .header h1 { font-size: 1.8em; }
             .content { padding: 20px; }
-            .selection-title { font-size: 1.5em; margin-bottom: 25px; }
-            .category-button { padding: 20px; }
-            .icon { font-size: 2.5em !important; }
-            .title { font-size: 1em !important; }
-            .standard-card { padding: 20px; }
+            .selection-title { font-size: 1.5em; }
         }
     </style>
 </head>
@@ -278,7 +178,6 @@
 
     <div class="content">
         
-        <!-- STEP 1: Category Selection -->
         <div id="categoryPanel" class="selection-panel">
             <h2 class="selection-title">1. Select Contractor Type</h2>
             <div class="button-grid">
@@ -314,27 +213,22 @@
             </div>
         </div>
 
-        <!-- STEP 2: Impact Level Selection -->
         <div id="impactPanel" class="impact-level-panel selection-panel">
             <button class="back-btn" onclick="goBackToCategories()">← Back to Categories</button>
             <h2 class="selection-title" id="impactTitle">2. Select Level</h2>
             <div class="button-grid" id="impactGrid">
-                <!-- Injected via JS -->
-            </div>
+                </div>
             <div id="impactNoteContainer">
-                <!-- Notes Injected via JS -->
-            </div>
+                </div>
         </div>
 
-        <!-- STEP 3: Results Display -->
         <div id="resultsPanel" class="results-panel">
             <div class="nav-bar">
                 <button class="back-btn" onclick="goBackFromResults()">← Back</button>
             </div>
 
             <div id="standardsContainer">
-                <!-- Standards Injected via JS -->
-            </div>
+                </div>
 
             <div class="warning-box">
                 <h4>⚠️ Compliance Notice</h4>
@@ -349,7 +243,7 @@
     // --- STATE MANAGEMENT ---
     let currentCategory = null;
 
-    // --- DATA STORE ---
+    // --- DATA STORE (UPDATED FOR CUMULATIVE LOGIC) ---
     const complianceData = {
         general: {
             title: "General Federal Contractor",
@@ -386,8 +280,33 @@
             ],
             standards: {
                 low: [{ id: "fr-low", title: "FedRAMP Low Baseline", badge: "required", requirements: ["Implement 125 NIST 800-53 controls", "Document System Security Plan (SSP)", "Engage 3PAO for assessment", "Obtain ATO (Authority to Operate)", "Low-Impact Continuous Monitoring"] }],
-                moderate: [{ id: "fr-mod", title: "FedRAMP Moderate Baseline", badge: "required", requirements: ["INCLUDES ALL LOW BASELINE CONTROLS", "Implement 325 NIST 800-53 controls", "Implement Multi-Factor Authentication (MFA)", "Detailed Incident Response Plan", "Annual 3PAO Assessment (Usuaully Required)", "Moderate-Impact Continuous Monitoring Program"] }],
-                high: [{ id: "fr-high", title: "FedRAMP High Baseline", badge: "required", requirements: ["INCLUDES ALL MODERATE BASELINE CONTROLS", "Implement 421 NIST 800-53 controls", "Automated configuration management", "High-Impact Continuous Monitoring (Automated)", "Penetration testing every 6 months"] }]
+                
+                moderate: [{ 
+                    id: "fr-mod", 
+                    title: "FedRAMP Moderate Baseline", 
+                    badge: "required", 
+                    requirements: [
+                        "<span class='cumulative-bold'>INCLUDES ALL FEDRAMP LOW REQUIREMENTS</span>", 
+                        "Total 325 NIST 800-53 controls", 
+                        "Implement Multi-Factor Authentication (MFA)", 
+                        "Detailed Incident Response Plan", 
+                        "Annual 3PAO Assessment (Usually Required)", 
+                        "Moderate-Impact Continuous Monitoring Program"
+                    ] 
+                }],
+                
+                high: [{ 
+                    id: "fr-high", 
+                    title: "FedRAMP High Baseline", 
+                    badge: "required", 
+                    requirements: [
+                        "<span class='cumulative-bold'>INCLUDES ALL FEDRAMP MODERATE REQUIREMENTS</span>", 
+                        "Total 421 NIST 800-53 controls", 
+                        "Automated configuration management", 
+                        "High-Impact Continuous Monitoring (Automated)", 
+                        "Penetration testing every 6 months"
+                    ] 
+                }]
             }
         },
         dod_general: {
@@ -418,7 +337,7 @@
                         title: "CMMC Level 2 (Advanced)", 
                         badge: "required", 
                         requirements: [
-                            "Includes all level 1 requirements", 
+                            "<span class='cumulative-bold'>INCLUDES ALL CMMC LEVEL 1 REQUIREMENTS</span>", 
                             "110 Security Practices (Matches NIST SP 800-171)", 
                             "Triennial Third-Party Assessment (C3PAO) for CUI", 
                             "System Security Plan (SSP) Required", 
@@ -443,7 +362,7 @@
                         title: "CMMC Level 3 (Expert)", 
                         badge: "required", 
                         requirements: [
-                            "Includes all Level 2 requirements", 
+                            "<span class='cumulative-bold'>INCLUDES ALL CMMC LEVEL 2 REQUIREMENTS</span>", 
                             "Additional Subset of NIST SP 800-172 controls", 
                             "Government-Led Assessment (DIBCAC)", 
                             "Focus on Advanced Persistent Threats (APT)"
@@ -455,53 +374,67 @@
         dod_cloud: {
             levels: [
                 { id: "il2", icon: "🟢", title: "Impact Level 2 (IL2)", desc: "Non-CUI / Public Release" },
-                { id: "il4", icon: "🟡", title: "Impact Level 4 (IL4)", desc: "CUI (e.g., FOUO, PHI, Export-Controlled Data)" },
-                { id: "il5", icon: "🟠", title: "Impact Level 5 (IL5)", desc: "Higher Sensitivity CUI (e.g. Mission Critical, NSS)" },
-                { id: "il6", icon: "🔴", title: "Impact Level 6 (IL6)", desc: "Classified (up to SECRET)" },
-                { id: "ts_sci", icon: "⚫", title: "Top Secret / SCI / SAP", desc: "(Special Rules Beyond IL Framework)" }
+                { id: "il4", icon: "🟡", title: "Impact Level 4 (IL4)", desc: "CUI / PII / Export Control" },
+                { id: "il5", icon: "🟠", title: "Impact Level 5 (IL5)", desc: "Mission Critical / NSS" },
+                { id: "il6", icon: "🔴", title: "Impact Level 6 (IL6)", desc: "Classified (SECRET)" }
             ],
             standards: {
                 il2: [
-                    { id: "il2-srg", title: "DoD Cloud SRG - IL2", badge: "required", requirements: ["DoD PA (Provisional Authorization) Required", "Equivalent to FedRAMP Moderate (mostly)", "Data must be stored in US or approved territories"] },
-                    { id: "il2-note", title: "Contractor Network Compliance", badge: "note", requirements: ["Note: The CSP's own corporate network will generally need to comply with CMMC Level 1 or 2 depending on the data handled internally."] }
+                    { 
+                        id: "il2-srg", 
+                        title: "DoD Cloud SRG - IL2", 
+                        badge: "required", 
+                        requirements: [
+                            "DoD PA (Provisional Authorization) Required", 
+                            "Equivalent to FedRAMP Moderate (mostly)", 
+                            "Data must be stored in US or approved territories"
+                        ] 
+                    },
+                    { id: "il2-note", title: "Internal Network Note", badge: "note", requirements: ["The CSP's own corporate network generally needs CMMC Level 1/2 compliance."] }
                 ],
                 il4: [
-                    { id: "il4-srg", title: "DoD Cloud SRG - IL4", badge: "required", requirements: ["DoD PA Required", "Equivalent to FedRAMP Moderate + DoD Specific Controls", "Must be accessible via NIPRNet (or equivalent assurance)", "Strong Incident Response integration with DoD"] },
-                    { id: "il4-note", title: "Contractor Network Compliance", badge: "note", requirements: ["Note: While the Cloud Offering follows the SRG, the Contractor's internal business systems must comply with CMMC Level 2 (NIST 800-171) if they handle CUI."] }
+                    { 
+                        id: "il4-srg", 
+                        title: "DoD Cloud SRG - IL4", 
+                        badge: "required", 
+                        requirements: [
+                            "<span class='cumulative-bold'>CUMULATIVE: INCLUDES ALL IL2 BASELINES</span>",
+                            "Equivalent to FedRAMP Moderate + DoD Specific 'FedRAMP+' Controls", 
+                            "Must be accessible via NIPRNet (or equivalent assurance)", 
+                            "Stronger Incident Response integration with DoD"
+                        ] 
+                    },
+                    { id: "il4-note", title: "Internal Network Note", badge: "note", requirements: ["Contractor internal systems must comply with CMMC Level 2 (NIST 800-171)."] }
                 ],
                 il5: [
-                    { id: "il5-srg", title: "DoD Cloud SRG - IL5", badge: "required", requirements: ["DoD PA Required", "Equivalent to FedRAMP High + DoD Specific Controls", "Dedicated Infrastructure (physically separated)", "Connection via Cloud Access Point (CAP)", "US Citizens Only for Ops/Admin"] },
-                    { id: "il5-note", title: "Contractor Network Compliance", badge: "note", requirements: ["Note: Internal corporate systems handling project data must comply with CMMC Level 2 or 3."] }
+                    { 
+                        id: "il5-srg", 
+                        title: "DoD Cloud SRG - IL5", 
+                        badge: "required", 
+                        requirements: [
+                            "<span class='cumulative-bold'>CUMULATIVE: INCLUDES ALL IL4 BASELINES</span>",
+                            "Escalates to <strong>FedRAMP High</strong> Baseline + DoD Specifics", 
+                            "<strong>Physical Separation:</strong> Dedicated Infrastructure required", 
+                            "Connection via Cloud Access Point (CAP)", 
+                            "US Citizens Only for Ops/Admin"
+                        ] 
+                    },
+                    { id: "il5-note", title: "Internal Network Note", badge: "note", requirements: ["Internal corporate systems must comply with CMMC Level 2 or 3."] }
                 ],
                 il6: [
-                    { id: "il6-srg", title: "DoD Cloud SRG - IL6", badge: "required", requirements: ["Classified (SECRET) Processing", "SIPRNet Connectivity", "Strict Physical Isolation (SCIF)", "Cleared Personnel Only"] },
-                    { id: "il6-note", title: "Contractor Network Compliance", badge: "note", requirements: ["Note: Corporate systems likely require CMMC Level 3 and FCL (Facility Clearance) status."] }
-                ],
-                ts_sci: [
                     { 
-                        id: "icd-503", 
-                        title: "Intelligence Community Directives", 
+                        id: "il6-srg", 
+                        title: "DoD Cloud SRG - IL6", 
                         badge: "required", 
-                        requirements: ["ICD 503: Intelligence Community Information Technology Systems Security Risk Management", "CNSSI 1253: Security Categorization and Control Selection for National Security Systems", "RMF (Risk Management Framework) for DoD/IC", "Overlays for Intelligence/Special Access"] 
+                        requirements: [
+                            "<span class='cumulative-bold'>CUMULATIVE: INCLUDES IL5 SECURITY RIGOR</span>",
+                            "<strong>Classified Environment:</strong> Processing up to SECRET", 
+                            "Connectivity: SIPRNet Only", 
+                            "Physical Security: Strict Isolation (SCIF) per ICD 705", 
+                            "Personnel: Secret Clearance Required"
+                        ] 
                     },
-                    { 
-                        id: "scif-req", 
-                        title: "SCIF / Physical Security", 
-                        badge: "required", 
-                        requirements: ["ICD 705: Sensitive Compartmented Information Facilities (Physical standards)", "TEMPEST countermeasures", "Technical Surveillance Countermeasures (TSCM)", "Strict Access Control Lists (ACLs)"] 
-                    },
-                    {
-                         id: "sap-jsig",
-                         title: "Special Access Programs (SAP)",
-                         badge: "applicable",
-                         requirements: ["JSIG (Joint Special Access Program Implementation Guide) compliance", "Dedicated Authorizing Official (AO) for SAP"]
-                    },
-                    { 
-                        id: "ts-note", 
-                        title: "Clearance Requirements", 
-                        badge: "note", 
-                        requirements: ["Top Secret Facility Clearance (FCL)", "Personnel must have TS/SCI eligibility and polygraphs as required", "Network connectivity via JWICS or NSANet"] 
-                    }
+                    { id: "il6-note", title: "Internal Network Note", badge: "note", requirements: ["Corporate systems likely require CMMC Level 3 and FCL (Facility Clearance)."] }
                 ]
             }
         },
@@ -514,9 +447,9 @@
                     badge: "required",
                     requirements: [
                         "Conduct Annual Risk Assessment",
-                        "Implement Administrative Safeguards (Training, policies)",
-                        "Implement Physical Safeguards (Locks, device security)",
-                        "Implement Technical Safeguards (Encryption, Audit logs)",
+                        "Implement Administrative Safeguards",
+                        "Implement Physical Safeguards",
+                        "Implement Technical Safeguards",
                         "Sign Business Associate Agreements (BAAs)",
                         "Breach Notification Protocol"
                     ]
@@ -529,7 +462,7 @@
                         "Compliance with CMS Acceptable Risk Safeguards (ARS)",
                         "NIST SP 800-53 Controls (Tailored for CMS)",
                         "Register System in CFACTS",
-                        "Obtain Authority to Operate (ATO) from CMS CIO",
+                        "Obtain Authority to Operate (ATO)",
                         "Annual Security Control Assessment (SCA)"
                     ]
                 }
@@ -540,12 +473,10 @@
     // --- FUNCTIONS ---
 
     function selectCategory(cat) {
-        currentCategory = cat; // Store global state
+        currentCategory = cat; 
         if (complianceData[cat].levels) {
-            // Has sub-levels (DoD General, DoD Cloud, Civil Cloud)
             showImpactPanel(cat);
         } else {
-            // Direct Results (General, Healthcare)
             renderResults(complianceData[cat].standards);
         }
     }
@@ -557,18 +488,17 @@
         const title = document.getElementById('impactTitle');
         const noteContainer = document.getElementById('impactNoteContainer');
         
-        // Dynamic Title
         if (cat === 'cloud') title.innerText = "Select FedRAMP Level";
         else if (cat === 'dod_general') title.innerText = "Select CMMC Level";
         else if (cat === 'dod_cloud') title.innerText = "Select Cloud Impact Level";
         else title.innerText = "Select Level";
 
         grid.innerHTML = '';
-        noteContainer.innerHTML = ''; // Clear previous notes
+        noteContainer.innerHTML = ''; 
 
         complianceData[cat].levels.forEach(lvl => {
             const div = document.createElement('div');
-            div.className = 'category-button'; // Reuse styling
+            div.className = 'category-button'; 
             div.style.alignItems = 'flex-start';
             div.style.textAlign = 'left';
             div.onclick = () => {
@@ -582,7 +512,6 @@
             grid.appendChild(div);
         });
         
-        // Add Note if exists
         if (complianceData[cat].note) {
             const noteDiv = document.createElement('div');
             noteDiv.className = 'info-box';
@@ -639,23 +568,12 @@
     function goBackFromResults() {
         document.getElementById('resultsPanel').style.display = 'none';
         
-        // Check if the current category has sub-levels
         if (currentCategory && complianceData[currentCategory].levels) {
-            // Go back to Impact Level selection
             document.getElementById('impactPanel').style.display = 'block';
         } else {
-            // Go back to Category selection (General, Healthcare)
             document.getElementById('categoryPanel').style.display = 'block';
             currentCategory = null;
         }
-    }
-    
-    // Legacy reset function just in case
-    function resetNavigator() {
-        document.getElementById('resultsPanel').style.display = 'none';
-        document.getElementById('impactPanel').style.display = 'none';
-        document.getElementById('categoryPanel').style.display = 'block';
-        currentCategory = null;
     }
 
 </script>
